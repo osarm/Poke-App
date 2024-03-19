@@ -1,0 +1,62 @@
+/*
+Colors used
+background-color #fafafa
+looking for new colors later
+*/
+:root {
+    --primary-color-bg: #fafafa;
+    --secondary-color: #badbff;
+    --tertiary-color: #ffdeba;
+    --dark-grey: #2b2b2b;
+    --font-family: 'Merriweather';
+    --a-unvisted: #006970;
+    --a-visited: #007c84;
+  }
+  
+  /* a {
+    color: var(--a-unvisted);
+  }
+  
+  a:visited {
+    color: var(--a-visited);
+  }
+  
+  * {
+    box-sizing: border-box;
+  } */
+  
+  /* Body and Headings */
+  
+  body {
+    background-color: var(--primary-color-bg);
+    font-family: var(--font-family);
+    font-weight: 400;
+    line-height: 1.6;
+    padding: 10px;
+    margin: 10px;
+    border: 1px;
+  }
+  
+  .required-field::after {
+    content: "*";
+    color: red;
+  }
+  
+  h1 {
+    font-size: 22px;
+    font-weight: 700px;
+    display: inline-flex;
+  }
+  
+  h2 {
+    font-size: 24px;
+    font-weight: 700px;
+  }
+  
+  p {
+    font-size: 18px;
+    font-weight: 700px;
+  }
+  
+  
+  
