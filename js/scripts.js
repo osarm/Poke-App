@@ -10,7 +10,14 @@ let pokemonList = [
     {name: 'Blastoise', type: ['Water'], height: 1.6},
 ]
 
-for (let i=0; i<pokemonList.length; i++) {
-    document.write(pokemonList[i].name + ' - ' + pokemonList[i].height);
-    document.write('<br>')
+// prints the list of names from Pokemon List and their height
+for (let i = 0; i < pokemonList.length; i++) {
+    document.write(pokemonList[i].name + ' (height: ' + pokemonList[i].height + ')');
+    // prints a message if the height is greater than 1m
+    if (pokemonList[i].height > 1.0) {
+        document.write(' - Woah, that is a big Pokemon!<br>')
+    }
+    else {
+        document.write('<br>')
+    }
 }
