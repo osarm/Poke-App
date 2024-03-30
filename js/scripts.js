@@ -1,4 +1,6 @@
 // height in meters(m)
+let pokemonRepository = (function(){
+
 let pokemonList = [
     {name: 'Bulbasaur', type: ['Grass', 'Poison'], height: 0.7},
     {name: 'Ivysaur', type: ['Grass', 'Poison'], height: 1},
@@ -9,11 +11,28 @@ let pokemonList = [
     {name: 'Squirtle', type: ['Water'], height: 0.5},
     {name: 'Wartortle', type: ['Water'], height: 1},
     {name: 'Blastoise', type: ['Water'], height: 1.6},
-    {name: 'Oshawott', type: ['Water'], height: 0.5},
-]
+    {name: 'Oshawott', type: ['Water'], height: 0.5}
+    ];
+function add(pokemon){
+    if (typeof pokemon === 'object') {
+        pokemonList.push(pokemon);
+    }
+}
+function getAll(){
+    return pokemonList;
+}
+return{
+    add:add,
+    getAll:getAll
+}
+})()
+
+pokemonRepository.add({
+    name: 'Dewott', height: 0.8, type: ['Water']
+});
 
 // prints the list of names from Pokemon List and their height
-pokemonList.forEach(function(pokemon){
+pokemonRepository.getAll().forEach(function(pokemon){
     // condition for pokemon with a height greater than 1m
     if (pokemon.height > 1) {
         document.write('<p>', pokemon.name + ', ' + ' Height:' + ' ' + pokemon.height + ' - Woah, that is a big Pokemon!;</p>')
