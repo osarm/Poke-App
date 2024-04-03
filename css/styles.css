@@ -58,7 +58,6 @@ looking for new colors later
     font-weight: 700px;
   }
   
-  
   .button-class {
   background-color: #4caf50; /* Green */
   border: none;
@@ -72,7 +71,7 @@ looking for new colors later
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
   cursor: pointer;
-  background-color: white;
+  background-color: rgb(234, 207, 207);
   color: black;
   border: 2px solid #af4c7a;
 }
