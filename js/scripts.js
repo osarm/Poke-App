@@ -21,10 +21,31 @@ function add(pokemon){
 function getAll(){
     return pokemonList;
 }
-return{
-    add:add,
-    getAll:getAll
+function addListItem(pokemon){
+    let pokemonList= document.querySelector('.pokemon-list');
+    let listpokemon = document.createElement('li');
+    let button = document.createElement('button');
+    button.innerText = pokemon.name;
+    button.classList.add('button-class')
+    listpokemon.appendChild(button);
+    pokemonList.appendChild(listpokemon);
+    }
+
+function showDetails(pokemon){
+    console.log(pokemon);
+    }
+
+function getPokemonByName(searchedName){
+    return pokemonList.filter((pokemon) => pokemon.name.toLowerCase() === searchedName.toLowerCase());
 }
+    // returns the functions
+return{
+    add: add,
+    getAll: getAll,
+    addListItem: addListItem,
+    getPokemonByName: getPokemonByName,
+    showDetails: showDetails
+    }
 })()
 
 pokemonRepository.add({
@@ -34,10 +55,7 @@ pokemonRepository.add({
 // prints the list of names from Pokemon List and their height
 pokemonRepository.getAll().forEach(function(pokemon){
     // condition for pokemon with a height greater than 1m
-    if (pokemon.height > 1) {
-        document.write('<p>', pokemon.name + ', ' + ' Height:' + ' ' + pokemon.height + ' - Woah, that is a big Pokemon!;</p>')
-    } else {
-        document.write('<p>', pokemon.name + ', ' + ' Height:' + pokemon.height + '; </p>')
-    }
+    pokemonRepository.addListItem(pokemon);
 });
 
+console.log(pokemonRepository.getPokemonByName('oshawott'));
