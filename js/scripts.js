@@ -10,7 +10,6 @@ let pokemonRepository = (function () {
       return string.charAt(0).toUpperCase() + string.slice(1);
     }
   
-
     // Add Pokemon to the list
     function add(pokemon) {
       if (
@@ -164,7 +163,6 @@ $(window).on('scroll', function () {
       });
     }
 });
-
 
     // Scroll to top button
     let $myButton = $("#scrollToTopButton");
