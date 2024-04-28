@@ -3,25 +3,77 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Simple JS App</title>
+    <title>Pokédex-JS App</title>
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"> 
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- CSS -->
     <link href="css/styles.css" rel="stylesheet" type="text/css">
   </head>
+
   <body>
-    <!-- definetely find a better name -->
-    <h1>Oscar's Pokédex</h1>
-    <br>
-    <div id="loadingMessage" style="display: none;">Loading...</div>
-    <ul class="pokemon-list"></ul>
-    <div id="modal-container"></div>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark shadow-sm">
+      <div class="container-fluid">
+          <a class="navbar-brand" href="index.html" >
+              <img src="pokeball.svg" alt="Pokeball" width="35px" height="35px" class="d-inline-block align-text-center">
+              POKÉDEX APP
+          </a>
+          <div class="input-group-prepend">
+              <button class="btn btn-outline-light my-2 my-sm-0" type="button" id="search-icon">
+                  <i class="fas fa-search"></i>
+              </button>
+              <div class="d-none" id="search-bar-container">
+                  <input type="text" class="form-control" placeholder="Search Pokemon" id="search-bar">
+              </div>
+          </div> 
+      </div>
+  </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+      <div class="row"></div>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopButton" class="btn btn-primary">
+      <i class="fa fa-angle-up"></i>
+    </button>
+
+    <!-- Pokemon Modal -->
+    <div class="modal fade" id="pokemonModal" tabindex="-1" aria-labelledby="pokemonModalTitle" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content" role="document">
+          <div class="modal-header">
+            <h5 class="modal-title" id="pokemonModalTitle">Pokemon Name</h5>
+            <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">
+                <i class="fas fa-times"></i>
+              </span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="image-background">
+            <img id="pokemonModalImage" alt="Pokemon Image">
+            </div>
+            <p id="pokemonModalHeight"></p>
+            <p id="pokemonModalWeight"></p>
+            <p id="pokemonModalTypes"></p>
+            <p id="pokemonModalAbilities"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JS: JQuery, Popper, & Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>    
+    <script src="js/scripts.js"></script>
     <script src="js/fetch-polyfill.js"></script>
     <script src="js/promise-polyfill.js"></script>
-    <script src="js/scripts.js"></script>
   </body>
 </html>
