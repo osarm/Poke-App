@@ -3,7 +3,7 @@ let pokemonRepository = (function () {
     let pokemonList = [];
     let apiUrl = 'https://pokeapi.co/api/v2/pokemon/';
     let offset = 0; // Start at Beginning
-    let limit = 151; // Fetch 50 Pokemon at a time
+    let limit = 50; // Fetch 50 Pokemon at a time
   
     // Capitalize Pokemon Names
     function capitalizeFirstLetter(string) {
