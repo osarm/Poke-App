@@ -3,14 +3,13 @@ let pokemonRepository = (function () {
     let pokemonList = [];
     let apiUrl = 'https://pokeapi.co/api/v2/pokemon/';
     let offset = 0; // Start at Beginning
-    let limit = 151; // Fetch 50 Pokemon at a time
+    let limit = 50; // Fetch 50 Pokemon at a time
   
     // Capitalize Pokemon Names
     function capitalizeFirstLetter(string) {
       return string.charAt(0).toUpperCase() + string.slice(1);
     }
   
-
     // Add Pokemon to the list
     function add(pokemon) {
       if (
@@ -164,7 +163,6 @@ $(window).on('scroll', function () {
       });
     }
 });
-
 
     // Scroll to top button
     let $myButton = $("#scrollToTopButton");
